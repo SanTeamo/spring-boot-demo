@@ -1,4 +1,4 @@
-package com.santeamo.firstboot.controller;
+package com.santeamo.demo.controller;
 
 import org.junit.Before;
 import org.junit.Test;

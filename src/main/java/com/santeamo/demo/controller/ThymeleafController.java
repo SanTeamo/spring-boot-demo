@@ -1,10 +1,10 @@
-package com.santeamo.firstboot.controller;
+package com.santeamo.demo.controller;
 
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
@@ -28,6 +28,26 @@ public class ThymeleafController {
     public String internationalbylink(){
 
         return "internationalbylink";
+    }
+
+    @RequestMapping("/error")
+    public String error(){
+        Integer integer = Integer.parseInt("");
+        return "error";
+    }
+
+    @RequestMapping("/ajaxerror")
+    public String ajaxerror(){
+        return "ajaxerror";
+    }
+
+    @RequestMapping("/getAjaxerror")
+    @ResponseBody
+    public Object getAjaxerror() {
+
+        int a = 1 / 0;
+
+        return "";
     }
 
 }

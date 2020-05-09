@@ -1,4 +1,4 @@
-package com.santeamo.firstboot.model;
+package com.santeamo.demo.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

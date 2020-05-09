@@ -1,6 +1,6 @@
-package com.santeamo.firstboot.repository;
+package com.santeamo.demo.repository;
 
-import com.santeamo.firstboot.model.User;
+import com.santeamo.demo.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

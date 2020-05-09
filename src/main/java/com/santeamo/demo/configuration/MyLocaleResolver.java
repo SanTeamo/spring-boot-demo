@@ -1,4 +1,4 @@
-package com.santeamo.firstboot.configuration;
+package com.santeamo.demo.configuration;
 
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.LocaleResolver;
@@ -9,7 +9,7 @@ import java.util.Locale;
 
 /**
  * @Title:
- * @ClassName: com.santeamo.firstboot.configuration.MyLocaleResolver.java
+ * @ClassName: com.santeamo.demo.configuration.MyLocaleResolver.java
  * @Description: 国际化处理器
  *
  * @author: santeamo

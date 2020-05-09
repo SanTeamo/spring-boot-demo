@@ -1,7 +1,6 @@
-package com.santeamo.firstboot.repository;
+package com.santeamo.demo.repository;
 
-import com.santeamo.firstboot.model.User;
-import org.junit.Assert;
+import com.santeamo.demo.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

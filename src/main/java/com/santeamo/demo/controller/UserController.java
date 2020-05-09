@@ -1,7 +1,7 @@
-package com.santeamo.firstboot.controller;
+package com.santeamo.demo.controller;
 
-import com.santeamo.firstboot.model.User;
-import com.santeamo.firstboot.repository.UserRepository;
+import com.santeamo.demo.model.User;
+import com.santeamo.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

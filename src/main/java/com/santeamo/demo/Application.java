@@ -1,13 +1,13 @@
-package com.santeamo.firstboot;
+package com.santeamo.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FirstbootApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(FirstbootApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.santeamo.firstboot.configuration;
+package com.santeamo.demo.configuration;
 
 
 import org.apache.catalina.filters.RemoteIpFilter;
