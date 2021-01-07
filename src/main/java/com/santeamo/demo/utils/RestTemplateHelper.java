@@ -4,10 +4,14 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.client.DefaultResponseErrorHandler;
+import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
@@ -24,6 +28,10 @@ public class RestTemplateHelper {
 
     public static String postJsonMsg(String url, String msg) {
         RestTemplate restTemplate = getRestTemplate();
+        return postJsonMsg(restTemplate, url, msg);
+    }
+
+    public static String postJsonMsg(RestTemplate restTemplate, String url, String msg) {
         HttpHeaders headers = new org.springframework.http.HttpHeaders();
         String contentType = "application/json;charset=utf-8";
         headers.setContentType(MediaType.parseMediaType(contentType));
@@ -43,6 +51,22 @@ public class RestTemplateHelper {
             }
         }
         return restTemplate;
+    }
+
+    public static RestTemplate getRestTemplate(ResponseErrorHandler responseErrorHandler) {
+        RestTemplate restTemplate = getRestTemplate();
+        restTemplate.setErrorHandler(responseErrorHandler);
+        return restTemplate;
+    }
+
+    public static class MyResponseErrorHandler extends DefaultResponseErrorHandler {
+        @Override
+        public void handleError(ClientHttpResponse response) throws IOException {
+            int rawStatusCode = response.getRawStatusCode();
+            if (rawStatusCode / 100 != 5) {
+                super.handleError(response);
+            }
+        }
     }
 
 }
